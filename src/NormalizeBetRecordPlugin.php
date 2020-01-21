@@ -2,10 +2,10 @@
 
 namespace Gamesmkt\FishpondRecord;
 
-use Gamesmkt\Fishpond\Adapter\CanNormalizeBetRecord;
+use Gamesmkt\FishpondRecord\CanNormalizeBetRecord;
 use Gamesmkt\Fishpond\Plugin\AbstractPlugin;
 
-class NormalizeBetRecord extends AbstractPlugin
+class NormalizeBetRecordPlugin extends AbstractPlugin
 {
     /**
      * Get the method name.
@@ -27,23 +27,27 @@ class NormalizeBetRecord extends AbstractPlugin
      *
      * @return array
      */
-    public function handle(array $records, array $config = [])
+    public function handle(array $betRecords, array $config = [])
     {
         $config = $this->fishpond::ensureConfig($config);
 
         if (!$this->fishpond->getAdapter() instanceof CanNormalizeBetRecord) {
-            return $records;
+            return $betRecords;
         }
 
-        $records = $this->fishpond->getAdapter()->normalizeBetRecord($records, $config);
+        $betRecordMethod = $this->fishpond->getAdapter()->getBetRecordMethod($config);
 
-        if (!isset($records)) {
+        $normalizeBetRecords = array_map(function ($betRecord) use ($betRecordMethod) {
+            return $betRecordMethod->normalize($betRecord);
+        }, $betRecords);
+
+        if (!isset($normalizeBetRecords)) {
             throw new NormalizeBetRecordException(
                 get_class($this->fishpond->getAdapter()) . ' normalize error.'
             );
         }
 
-        return $records;
+        return $normalizeBetRecords;
     }
 
 }

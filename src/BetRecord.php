@@ -2,8 +2,6 @@
 
 namespace Gamesmkt\FishpondRecord;
 
-use Gamesmkt\Fishpond\BetRecordInterface;
-
 class BetRecord implements BetRecordInterface
 {
     /** @var string */

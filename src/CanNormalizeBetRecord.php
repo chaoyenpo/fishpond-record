@@ -10,14 +10,11 @@ use Gamesmkt\Fishpond\Config;
 interface CanNormalizeBetRecord
 {
     /**
-     * 正規化下注紀錄。
+     * 取得下注紀錄模板方法。
      *
-     * @param \Gamesmkt\Fishpond\RecordInterface[] $records
      * @param \Gamesmkt\Fishpond\Config $config
      *
-     * @throws \Gamesmkt\Fishpond\Exception\NormalizeBetRecordException
-     *
-     * @return array
+     * @return \Gamesmkt\FishpondRecord\Template\AbstractBetRecord
      */
-    public function normalizeBetRecord(array $records, Config $config);
+    public function getBetRecordMethod(Config $config);
 }
