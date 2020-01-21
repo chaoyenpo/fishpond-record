@@ -1,6 +1,6 @@
 <?php
 
-namespace Gamesmkt\FishpondRecord\Exception;
+namespace Gamesmkt\FishpondRecord;
 
 use RuntimeException;
 

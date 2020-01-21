@@ -1,8 +1,9 @@
 <?php
 
-namespace Gamesmkt\FishpondRecord\Plugin;
+namespace Gamesmkt\FishpondRecord;
 
 use Gamesmkt\Fishpond\Adapter\CanNormalizeBetRecord;
+use Gamesmkt\Fishpond\Plugin\AbstractPlugin;
 
 class NormalizeBetRecord extends AbstractPlugin
 {
