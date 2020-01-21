@@ -39,6 +39,4 @@ interface BetRecordInterface extends RecordInterface
     const STATUS_COMPLETED_ROLLBACK = 8;
     const STATUS_ADVANCE_COMPLETED = 9;
     const STATUS_UNKNOWN = 10;
-
-    public function getRoundId();
 }

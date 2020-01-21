@@ -17,7 +17,8 @@
     "require": {
         "php": ">=7.2",
         "gamesmkt/fishpond": "dev-master",
-        "illuminate/support": "~5.5 || ^6.8"
+        "illuminate/support": "~5.5 || ^6.8",
+        "illuminate/translation": "~5.5 || ^6.8"
     },
     "require-dev": {
         "mockery/mockery": "^1.0",

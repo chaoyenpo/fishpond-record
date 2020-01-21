@@ -58,7 +58,7 @@ abstract class AbstractBetRecordMethod
         : $this->calculatePayment($sourceBetRecord);
 
         // 顯示資料
-        $betRecord->displayData = $this->getDisplayData($betRecord);
+        $betRecord->displayData = $this->getDisplayData($betRecord, data_get($this->config, 'language'));
 
         return $betRecord;
     }

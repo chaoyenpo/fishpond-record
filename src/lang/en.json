@@ -1,0 +1,14 @@
+{
+    "": "None",
+    "NULL": "None",
+    "null": "None",
+    "Null": "None",
+    "None": "None",
+    "bet_id": "Bet Id",
+    "bet_record_status": "Bet Record Status",
+    "bet_time": "Bet Time",
+    "last_update_time": "Last Update Time",
+    "bet_amount": "Bet Amount",
+    "effective_bet_amount": "Effective Bet Amount",
+    "payment": "Payment"
+}

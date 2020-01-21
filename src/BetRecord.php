@@ -4,30 +4,39 @@ namespace Gamesmkt\FishpondRecord;
 
 class BetRecord implements BetRecordInterface
 {
-    /** @var string */
-    public $id;
-
-    /** @var string */
-    public $roundId;
-
-    /**
-     * @param string $id The record id
-     * @param string $id The round id
-     */
-    public function __construct(string $id = null, string $roundId = null)
-    {
-        $this->id = $id;
-        $this->roundId = $roundId;
-    }
-
     public function getId()
     {
         return $this->id;
     }
 
-    public function getRoundId()
+    public function getStatus()
     {
-        return $this->roundId;
+        return $this->status;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    public function getBetAmount()
+    {
+        return $this->betAmount;
+    }
+
+    public function getValidBetAmount()
+    {
+        return $this->validBetAmount;
+    }
+
+    public function getPayment()
+    {
+        return $this->payment;
     }
 
     public function __set($name, $value)
