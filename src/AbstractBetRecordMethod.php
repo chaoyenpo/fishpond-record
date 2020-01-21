@@ -27,7 +27,7 @@ abstract class AbstractBetRecordMethod
         $betRecord->playerName = $this->getPlayerName($sourceBetRecord);
 
         // 遊戲標識符，此專案產生的。
-        $betRecord->gameId = (string) $this->getGameId($sourceBetRecord);
+        $betRecord->gameCode = (string) $this->getGameCode($sourceBetRecord);
 
         // 注單標識符，每筆注單只會有一個。
         $betRecord->id = (string) $this->getBetId($sourceBetRecord);
@@ -73,7 +73,7 @@ abstract class AbstractBetRecordMethod
 
     abstract public function getPlayerName($betRecord): string;
 
-    abstract public function getGameId($betRecord): string;
+    abstract public function getGameCode($betRecord): string;
 
     abstract public function getStatus($betRecord): int;
 
