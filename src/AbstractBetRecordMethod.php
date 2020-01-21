@@ -20,6 +20,9 @@ abstract class AbstractBetRecordMethod
     {
         $betRecord = new BetRecord();
 
+        // 原始注單資料
+        $betRecord->source = $sourceBetRecord;
+
         // 玩家名稱
         $betRecord->playerName = $this->getPlayerName($sourceBetRecord);
 
