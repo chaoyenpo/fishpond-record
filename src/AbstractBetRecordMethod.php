@@ -39,12 +39,12 @@ abstract class AbstractBetRecordMethod
         $betRecord->status = $this->getStatus($sourceBetRecord);
 
         // 注單建立時間。
-        $betRecord->createdAt = $this->formatDateTime($this->getCreatedAt($sourceBetRecord));
+        $betRecord->createdAt = $this->getCreatedAt($sourceBetRecord);
 
         // 注單更新時間，電子機率類的通常會一樣。
         $betRecord->updatedAt = $this->getStatus($sourceBetRecord) === BetRecordInterface::STATUS_ACTIVE
         ? ''
-        : $this->formatDateTime($this->getUpdatedAt($sourceBetRecord));
+        : $this->getUpdatedAt($sourceBetRecord);
 
         // 投注金額
         $betRecord->betAmount = $this->getBetAmount($sourceBetRecord);
@@ -63,9 +63,9 @@ abstract class AbstractBetRecordMethod
         return $betRecord;
     }
 
-    abstract public function getCreatedAt($betRecord): string;
+    abstract public function getCreatedAt($betRecord): ?Carbon;
 
-    abstract public function getUpdatedAt($betRecord): string;
+    abstract public function getUpdatedAt($betRecord): ?Carbon;
 
     abstract public function getBetId($betRecord): string;
 
@@ -84,8 +84,6 @@ abstract class AbstractBetRecordMethod
     abstract public function getPayment($betRecord): ?string;
 
     abstract public function getWinloss($betRecord): ?string;
-
-    abstract public function formatDateTime($betRecord): ?Carbon;
 
     abstract public function getDisplayData($betRecord): array;
 
